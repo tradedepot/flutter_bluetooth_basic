@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_scan_bluetooth/flutter_scan_bluetooth.dart';
 import 'package:rxdart/rxdart.dart';
-
-import 'bluetooth_device.dart';
 
 /// A BluetoothManager.
 class BluetoothManager {
@@ -91,7 +90,7 @@ class BluetoothManager {
         .takeUntil(Rx.merge(killStreams))
         .doOnDone(stopScan)
         .map((map) {
-      final device = BluetoothDevice.fromJson(Map<String, dynamic>.from(map));
+      final device = BluetoothDevice.fromMap(Map<String, dynamic>.from(map));
       final List<BluetoothDevice>? list = _scanResults.value;
       int newIndex = -1;
       list!.asMap().forEach((index, e) {
@@ -125,7 +124,7 @@ class BluetoothManager {
   }
 
   Future<dynamic> connect(BluetoothDevice device) =>
-      _channel.invokeMethod('connect', device.toJson());
+      _channel.invokeMethod('connect', device.toMap());
 
   Future<dynamic> disconnect() => _channel.invokeMethod('disconnect');
 
