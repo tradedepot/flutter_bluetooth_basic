@@ -2,6 +2,7 @@ import 'dart:convert';
 // import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_scan_bluetooth/flutter_scan_bluetooth.dart';
 import 'package:flutter_bluetooth_basic/flutter_bluetooth_basic.dart';
 
 void main() => runApp(MyApp());
