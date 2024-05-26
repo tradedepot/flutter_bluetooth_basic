@@ -90,7 +90,11 @@ class BluetoothManager {
         .takeUntil(Rx.merge(killStreams))
         .doOnDone(stopScan)
         .map((map) {
-      final device = BluetoothDevice.fromMap(Map<String, dynamic>.from(map));
+      final json = Map<String, dynamic>.from(map);
+      final device = BluetoothDevice(
+        json['name'],
+        json['address'],
+      );
       final List<BluetoothDevice>? list = _scanResults.value;
       int newIndex = -1;
       list!.asMap().forEach((index, e) {
