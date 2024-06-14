@@ -15,7 +15,7 @@ dependencies:
   rxdart: ^0.26.0
   flutter_scan_bluetooth:
     git:
-      url: https://github.com/Yczar/flutter_scan_bluetooth.git
+      url: https://github.com/Dartmind-OpenSource/flutter_scan_bluetooth.git
 
 dev_dependencies:
   flutter_test:
