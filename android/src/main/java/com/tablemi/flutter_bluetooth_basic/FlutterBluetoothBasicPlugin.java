@@ -29,7 +29,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.PluginRegistry.RequestPermissionsResultListener;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 
@@ -48,7 +47,6 @@ public class FlutterBluetoothBasicPlugin implements FlutterPlugin, MethodCallHan
     private ThreadPool threadPool;
     private static final int REQUEST_COARSE_LOCATION_PERMISSIONS = 1451;
     private static final String NAMESPACE = "flutter_bluetooth_basic";
-    private PluginRegistry.Registrar registrar;
     private MethodChannel channel;
     private EventChannel stateChannel;
     private BluetoothManager mBluetoothManager;
